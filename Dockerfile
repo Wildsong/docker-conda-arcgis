@@ -1,8 +1,10 @@
 FROM continuumio/miniconda3:latest
 
-RUN conda update -n base -c defaults conda -y && \
-    conda install -c esri arcgis git
+RUN conda update -c defaults conda -y && \
+    conda install -c esri arcgis
 
-#WORKDIR /srv
-#RUN git clone https://github.com/Wildsong/gis-test.git
-#RUN conda install -f gis-test/env.yml
+ARG CACHEBUST=1
+RUN git clone https://github.com/Wildsong/docker-conda-arcgis.git /source
+WORKDIR /source
+ENTRYPOINT [ "python" ]
+
