@@ -6,5 +6,7 @@ RUN conda update -c defaults conda -y && \
 ARG CACHEBUST=1
 RUN git clone https://github.com/Wildsong/docker-conda-arcgis.git /source
 WORKDIR /source
-ENTRYPOINT [ "python" ]
+
+CMD [ "python", "versions.py" ]
+
 

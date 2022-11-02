@@ -12,7 +12,7 @@ to make a copy of this repository into the container. (We're just testing here!)
 Since there is a script included in the repository, you can then try running it like this
 
 ```bash
-docker run --rm conda-arcgis versions.py
+docker run --rm conda-arcgis
 ```
 
 All it does right now is print out version information.
